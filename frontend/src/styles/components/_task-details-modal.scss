@@ -1,0 +1,30 @@
+.task-detail-modal-container {
+
+	.MuiBackdrop-root {
+		opacity: 1 !important;
+	}
+
+	#task-details-body-wrapper {
+		background-color: white;
+		padding: 15px;
+
+		@media (min-width: 769px) {
+			background-color: white;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 10%);
+		}
+
+		.task-details-header-container, .task-details-footer-container {
+			min-height: 50px;
+			.task-title {
+				width: 100%;
+			}
+		}
+
+		textarea {
+			resize: none;
+			width: 100%;
+		}
+	}
+}

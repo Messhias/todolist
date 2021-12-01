@@ -1,0 +1,4 @@
+export const GET_STATUS = "GET_STATUS";
+export const DELETE_STATUS = "DELETE_STATUS";
+export const CREATE_STATUS = "CREATE_STATUS";
+export const UPDATE_STATUS = "UPDATE_STATUS";

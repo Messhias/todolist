@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+
+    web:
+        container_name: web_todolist
+        restart: always
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./:/code
+            - ./host.conf:/etc/nginx/conf.d/default.conf
+        links:
+            - php:php
+        env_file:
+            - ./.env
+
+    php:
+        container_name: php_todolist
+        build:
+            context: ./
+            dockerfile: ./docker/php/Dockerfile
+        env_file:
+            - ./.env
+        restart: always
+        volumes:
+            - ./:/code
+        links:
+            - database
+
+    database:
+        container_name: database_todolist
+        image: postgres:latest
+        ports:
+            - 5432:5432
+        restart: always
+        environment:
+            POSTGRES_USER: docker
+            POSTGRES_PASSWORD: docker
+            POSTGRES_DB: docker
+            PGDATA: /var/lib/postgresql/data/pgdata
+

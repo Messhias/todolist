@@ -1,0 +1,15 @@
+#main-header-menu-holder {
+	header {
+		color: black;
+		background-color: transparent;
+		box-shadow: none;
+
+		#app-name {
+			display: block;
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+	}
+
+}

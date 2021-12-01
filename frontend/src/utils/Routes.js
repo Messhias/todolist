@@ -13,6 +13,7 @@ const MountRoutes = () => {
 	const publicRoutes = {
 		"/login": Pages.Login,
 		"/register": Pages.Register,
+		"/": Pages.HomePage,
 	};
 
 	return [
